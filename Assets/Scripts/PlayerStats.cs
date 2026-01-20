@@ -16,6 +16,7 @@ public class PlayerStats
         }
         set
         {
+            //Option A completed in class
             if (value > 20)
             {
                 moveSpeed = 20;
