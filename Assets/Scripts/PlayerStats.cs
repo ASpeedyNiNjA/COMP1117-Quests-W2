@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerStats
@@ -6,6 +7,9 @@ public class PlayerStats
     private float moveSpeed;
     private int maxHealth;
     private int currentHealth;
+
+    //Quest 2-B
+    public bool Dead;
 
     // Public properties
     public float MoveSpeed
@@ -46,6 +50,20 @@ public class PlayerStats
             currentHealth = Mathf.Clamp(value, 0, 100);
             Debug.Log($"Health set to: {currentHealth}");
         }
+    }
+
+    //Quest 2-B
+    public bool IsDead
+    {
+        get { return Dead; }
+        set
+        {
+            if (IsDead)
+            {
+                Debug.Log("Player has Perished");
+            }
+        }
+
     }
 
     // Constructor

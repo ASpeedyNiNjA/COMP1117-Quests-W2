@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     // Components
     private Rigidbody2D rBody;
 
+    //Quest 2B
+    public bool isDead = false;
+
     void Awake()
     {
         // Initialize
@@ -46,5 +49,10 @@ public class PlayerController : MonoBehaviour
         // stats.CurrentHealth = stats.CurrentHealth - damageAmount;
 
         Debug.Log("Player took damage");
+
+        if (stats.CurrentHealth <= 0)
+        {
+            isDead = true;
+        }
     }
 }
