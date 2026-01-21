@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Initial Player Stats")]
     // Initial Player Stats
-    [SerializeField] private float initialSpeed = 5;
+    [SerializeField] public float initialSpeed = 5;
     [SerializeField] private int initialHealth = 100;
+
+    public Image HPFull;
 
     // Private variables
     private PlayerStats stats;
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         // stats.CurrentHealth = stats.CurrentHealth - damageAmount;
 
         Debug.Log("Player took damage");
+        HPFull.fillAmount = (float)stats.CurrentHealth / (float)stats.MaxHealth;
 
     }
 }
